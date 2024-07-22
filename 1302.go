@@ -1,6 +1,9 @@
 package main
 
-import "container/list"
+import (
+	"container/list"
+	"fmt"
+)
 
 type TreeNode1302 struct {
 	Val   int
@@ -37,5 +40,5 @@ func deepestLeavesSum(root *TreeNode1302) int {
 }
 
 func main() {
-
+	fmt.Println(deepestLeavesSum(nil))
 }

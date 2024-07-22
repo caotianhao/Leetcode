@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 func isValidSudoku(board [][]byte) bool {
-	flag := true
 	for i := 0; i < 9; i++ {
 		isOne := make([]int, 9)
 		for j := 0; j < 9; j++ {
@@ -158,7 +157,7 @@ func isValidSudoku(board [][]byte) bool {
 		}
 	}
 
-	return flag
+	return true
 }
 
 func main() {

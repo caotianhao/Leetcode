@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type TreeNode897 struct {
 	Val   int
 	Left  *TreeNode897
@@ -24,5 +26,5 @@ func increasingBST(root *TreeNode897) *TreeNode897 {
 }
 
 func main() {
-
+	fmt.Println(increasingBST(nil))
 }

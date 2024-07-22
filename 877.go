@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func stoneGame(piles []int) bool {
-	return true
+	return len(piles) > 1
 }
 
 func main() {

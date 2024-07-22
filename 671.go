@@ -1,6 +1,9 @@
 package main
 
-import "github.com/Arafatk/DataViz/trees/redblacktree"
+import (
+	"fmt"
+	"github.com/Arafatk/DataViz/trees/redblacktree"
+)
 
 type TreeNode671 struct {
 	Val   int
@@ -29,5 +32,5 @@ func findSecondMinimumValue(root *TreeNode671) int {
 }
 
 func main() {
-
+	fmt.Println(findSecondMinimumValue(nil))
 }

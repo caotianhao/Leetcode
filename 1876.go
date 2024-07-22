@@ -1,6 +1,8 @@
 package main
 
-//如果一个字符串不含有任何重复字符，我们称这个字符串为 好 字符串。
+import "fmt"
+
+// 如果一个字符串不含有任何重复字符，我们称这个字符串为 好 字符串。
 func countGoodSubstrings(s string) int {
 	l, cnt := len(s), 0
 	if l < 3 {
@@ -27,5 +29,5 @@ func isGood1876(s string) bool {
 }
 
 func main() {
-
+	fmt.Println(countGoodSubstrings("ai"))
 }

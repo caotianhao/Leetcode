@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func smallestEqual(nums []int) int {
 	l := len(nums)
 	for i := 0; i < l; i++ {
@@ -11,5 +13,5 @@ func smallestEqual(nums []int) int {
 }
 
 func main() {
-
+	fmt.Println(smallestEqual([]int{1, 2, 5, 6}))
 }

@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type TreeNode2265 struct {
 	Val   int
 	Left  *TreeNode2265
@@ -37,5 +39,5 @@ func averageOfSubtree(root *TreeNode2265) (cnt int) {
 }
 
 func main() {
-
+	fmt.Println(averageOfSubtree(nil))
 }

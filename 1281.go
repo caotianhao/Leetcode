@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func subtractProductAndSum(n int) int {
 	mySlice, myNum, pro, sum := make([]int, 0), n, 1, 0
 	for myNum != 0 {
@@ -14,5 +16,6 @@ func subtractProductAndSum(n int) int {
 }
 
 func main() {
-
+	fmt.Println(subtractProductAndSum(16))
+	fmt.Println(subtractProductAndSum(1611))
 }

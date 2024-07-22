@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func numIdenticalPairs(nums []int) int {
 	pair := 0
 	for i := 0; i < len(nums); i++ {
@@ -10,4 +12,8 @@ func numIdenticalPairs(nums []int) int {
 		}
 	}
 	return pair
+}
+
+func main() {
+	fmt.Println(numIdenticalPairs([]int{2, 3, 6}))
 }

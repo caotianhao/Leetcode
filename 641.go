@@ -1,6 +1,9 @@
 package main
 
-import "container/list"
+import (
+	"container/list"
+	"fmt"
+)
 
 type MyCircularDeque struct {
 	queue list.List
@@ -67,5 +70,6 @@ func (q *MyCircularDeque) IsFull() bool {
 }
 
 func main() {
-
+	c := Constructor641(12)
+	fmt.Println(c.IsFull())
 }

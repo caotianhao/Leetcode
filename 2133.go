@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func checkValid(matrix [][]int) bool {
 	n := len(matrix)
 	for i := 0; i < n; i++ {
@@ -33,5 +35,5 @@ func help2133(arr []int, n int) bool {
 }
 
 func main() {
-
+	fmt.Println(checkValid(nil))
 }

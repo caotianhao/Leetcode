@@ -8,7 +8,7 @@ func generateMatrix(n int) [][]int {
 	for i := 0; i < n; i++ {
 		ret[i] = make([]int, n)
 	}
-	//记录上下左右边界
+	//记录上下左右的边界
 	//cnt是添加的元素，同时需要判断边界
 	up, down, left, right, cnt := 0, n-1, 0, n-1, 1
 	for cnt <= n*n {

@@ -2,6 +2,7 @@ package main
 
 import (
 	"container/list"
+	"fmt"
 	"math"
 )
 
@@ -37,5 +38,5 @@ func largestValues(root *TreeNode515) (res []int) {
 }
 
 func main() {
-
+	fmt.Println(largestValues(nil))
 }

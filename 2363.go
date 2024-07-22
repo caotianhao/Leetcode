@@ -15,11 +15,11 @@ func mergeSimilarItems(items1 [][]int, items2 [][]int) [][]int {
 	for i := 0; i < l2; i++ {
 		tmpMap[items2[i][0]] += items2[i][1]
 	}
-	for i, _ := range tmpMap {
+	for i := range tmpMap {
 		tmpSlice = append(tmpSlice, i)
 	}
 	sort.Ints(tmpSlice)
-	for i, _ := range tmpSlice {
+	for i := range tmpSlice {
 		ret = append(ret, []int{tmpSlice[i], tmpMap[tmpSlice[i]]})
 	}
 	return ret

@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type TreeNode538 struct {
 	Val   int
 	Left  *TreeNode538
@@ -37,5 +39,5 @@ func convertBST(root *TreeNode538) *TreeNode538 {
 }
 
 func main() {
-
+	fmt.Println(convertBST(nil))
 }

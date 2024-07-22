@@ -16,7 +16,7 @@ func maxSumTwoNoOverlap(nums []int, firstLen, secondLen int) (ans int) {
 	}
 	// leftMax 是左面最大值
 	// 要熟悉前缀和数组的计算形式
-	// 计算前缀和这种的，前后两个下标的差一定是区间长度
+	// 计算前缀和这种的，前后两个下标的差一定是区间的长度
 	for i, leftMax := firstLen, 0; i+secondLen-1 < l; i++ {
 		leftMax = max1031(leftMax, prefix[i]-prefix[i-firstLen])
 		ans = max1031(ans, leftMax+prefix[i+secondLen]-prefix[i])

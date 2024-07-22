@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type TreeNode965 struct {
 	Val   int
 	Left  *TreeNode965
@@ -24,5 +26,5 @@ func isUnivalTree(root *TreeNode965) bool {
 }
 
 func main() {
-
+	fmt.Println(isUnivalTree(nil))
 }

@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type ListNode2130 struct {
 	Val  int
 	Next *ListNode2130
@@ -28,5 +30,5 @@ func max2130(a, b int) int {
 }
 
 func main() {
-
+	fmt.Println(pairSum(nil))
 }

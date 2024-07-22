@@ -27,7 +27,7 @@ func Constructor703(k int, nums []int) KthLargest {
 }
 
 func (kl *KthLargest) Add(val int) int {
-	// 默认是小根堆，其实这里和红黑树的不同之处就在于
+	// 默认是一个小根堆，其实这里和红黑树的不同之处就在于
 	// 红黑树是 set，而本题可以有重复元素
 	heap.Push(kl, val)
 	if kl.Len() > kl.k {
