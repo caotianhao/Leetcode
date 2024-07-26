@@ -2,12 +2,12 @@ package main
 
 import "fmt"
 
-//题本身不难，但是思考了很久
-//map和slice应用还不熟练?
-//逻辑问题，很绕！！
+// 题本身不难，但是思考了很久
+// map和slice应用还不熟练?
+// 逻辑问题，很绕！！
 func uniqueMorseRepresentations(words []string) int {
-	letterAndMorseMap, letter := make(map[string]string, 0), make([]string, 26)
-	wordSlice, trueWordSliceMap := make([]string, 0), make(map[string]int, 0)
+	letterAndMorseMap, letter := make(map[string]string), make([]string, 26)
+	wordSlice, trueWordSliceMap := make([]string, 0), make(map[string]int)
 	morse := []string{".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---",
 		"-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-",
 		".--", "-..-", "-.--", "--.."}

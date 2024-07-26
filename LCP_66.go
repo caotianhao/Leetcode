@@ -6,14 +6,14 @@ import "fmt"
 func minNumBooths(demand []string) int {
 	l, exCnt := len(demand), 0
 	//存储暂时这一轮字符串需要的字母数
-	tempMap := make(map[string]int, 0)
+	tempMap := make(map[string]int)
 	//存储总的所需要的字母数
-	allMap := make(map[string]int, 0)
+	allMap := make(map[string]int)
 	//存储每一轮字符串需要的额外字母数
-	exMap := make(map[string]int, 0)
+	exMap := make(map[string]int)
 	for i := 0; i < l; i++ {
 		//因为是暂时的，所以每轮都要初始化
-		tempMap = make(map[string]int, 0)
+		tempMap = make(map[string]int)
 		for j := 0; j < len(demand[i]); j++ {
 			//暂时存储
 			tempMap[string(demand[i][j])]++

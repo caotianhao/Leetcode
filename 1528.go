@@ -4,7 +4,7 @@ import "fmt"
 
 func restoreString(s string, indices []int) string {
 	str, l := "", len(s)
-	map1528 := make(map[int]byte, 0)
+	map1528 := make(map[int]byte)
 	for i := 0; i < l; i++ {
 		map1528[indices[i]] = s[i]
 	}

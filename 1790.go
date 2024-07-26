@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func areAlmostEqual(s1 string, s2 string) bool {
-	l1, l2, map1, map2 := len(s1), len(s2), make(map[string]int, 0), make(map[string]int, 0)
+	l1, l2, map1, map2 := len(s1), len(s2), make(map[string]int), make(map[string]int)
 	if l1 != l2 {
 		return false
 	}

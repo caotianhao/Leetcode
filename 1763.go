@@ -26,8 +26,8 @@ func longestNiceSubstring(s string) string {
 }
 
 func isNice(s string) bool {
-	big := make(map[byte]int, 0)
-	small := make(map[byte]int, 0)
+	big := make(map[byte]int)
+	small := make(map[byte]int)
 	for _, v := range s {
 		if v >= 'a' && v <= 'z' {
 			small[byte(v)] = int(v)

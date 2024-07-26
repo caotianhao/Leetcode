@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func sortString(s string) string {
-	l, charMap, res := len(s), make(map[string]int, 0), ""
+	l, charMap, res := len(s), make(map[string]int), ""
 	for i := 0; i < l; i++ {
 		charMap[string(s[i])]++
 	}

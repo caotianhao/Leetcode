@@ -6,7 +6,7 @@ import (
 )
 
 func digitCount(num string) bool {
-	l, cntMap, flag := len(num), make(map[int]int, 0), true
+	l, cntMap, flag := len(num), make(map[int]int), true
 	for i := 0; i < l; i++ {
 		temp, _ := strconv.ParseInt(string(num[i]), 10, 64)
 		cntMap[int(temp)]++

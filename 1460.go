@@ -5,7 +5,7 @@ import "fmt"
 func canBeEqual(target []int, arr []int) bool {
 	//思想：只要 target 和 arr 两数组中元素完全相同，个数也相同
 	//也就是排序之后完全相同，即可在有限次翻转内使原 arr 变为 target
-	targetMap, arrMap := make(map[int]int, 0), make(map[int]int, 0)
+	targetMap, arrMap := make(map[int]int), make(map[int]int)
 	lt, la, cnt := len(target), len(arr), 0
 	for i := 0; i < lt; i++ {
 		targetMap[target[i]]++
