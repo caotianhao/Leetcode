@@ -34,21 +34,14 @@ func longestString(x, y, z int) int {
 			}
 			// AA 情况，并且和 AB 情况取最大值
 			if x > 0 {
-				res = max2745(res, 2+dfs(x-1, y, z, 0))
+				res = max(res, 2+dfs(x-1, y, z, 0))
 			}
 		}
 		*p = res // 记忆化搜索
 		return   // 退出
 	}
 	// 上面已经有和 flag==2 的比较了，所以这里只比较 flag 为 0 和 1 的情况
-	return max2745(dfs(x, y, z, 0), dfs(x, y, z, 1))
-}
-
-func max2745(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
+	return max(dfs(x, y, z, 0), dfs(x, y, z, 1))
 }
 
 func main() {

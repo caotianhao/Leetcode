@@ -6,7 +6,7 @@ import (
 )
 
 func getMinDistance(nums []int, target int, start int) int {
-	indexSlice, min := make([]int, 0), 1000
+	indexSlice, minN := make([]int, 0), 1000
 	for i, v := range nums {
 		if v == target {
 			indexSlice = append(indexSlice, i)
@@ -14,11 +14,11 @@ func getMinDistance(nums []int, target int, start int) int {
 	}
 	for i := 0; i < len(indexSlice); i++ {
 		tmp := int(math.Abs(float64(start) - float64(indexSlice[i])))
-		if tmp < min {
-			min = tmp
+		if tmp < minN {
+			minN = tmp
 		}
 	}
-	return min
+	return minN
 }
 
 func main() {

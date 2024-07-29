@@ -22,20 +22,13 @@ func countDaysTogether(arriveAlice string, leaveAlice string, arriveBob string, 
 	fmt.Println(a1, a2, b1, b2)
 	// alice 先
 	if a1 <= b1 && b1 <= a2 {
-		return min2409(a2-b1+1, min2409(a2-a1+1, b2-b1+1))
+		return min(a2-b1+1, min(a2-a1+1, b2-b1+1))
 	}
 	// bob 先
 	if b1 <= a1 && a1 <= b2 {
-		return min2409(b2-a1+1, min2409(a2-a1+1, b2-b1+1))
+		return min(b2-a1+1, min(a2-a1+1, b2-b1+1))
 	}
 	return 0
-}
-
-func min2409(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
 }
 
 func main() {

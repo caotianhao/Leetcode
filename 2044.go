@@ -4,7 +4,7 @@ import "fmt"
 
 func countMaxOrSubsets(nums []int) (cnt int) {
 	l := len(nums)
-	max := -1
+	maxN := -1
 	for i := 1; i < 1<<l; i++ {
 		res := 0
 		for j := 0; j < l; j++ {
@@ -12,8 +12,8 @@ func countMaxOrSubsets(nums []int) (cnt int) {
 				res |= nums[l-j-1]
 			}
 		}
-		if res > max {
-			max = res
+		if res > maxN {
+			maxN = res
 		}
 	}
 	for i := 1; i < 1<<l; i++ {
@@ -23,7 +23,7 @@ func countMaxOrSubsets(nums []int) (cnt int) {
 				res |= nums[l-j-1]
 			}
 		}
-		if res == max {
+		if res == maxN {
 			cnt++
 		}
 	}

@@ -10,18 +10,18 @@ func maxSum(nums []int) int {
 	for i, v := range nums {
 		dig[i] = getMaxDigit(v)
 	}
-	max := -1
+	maxN := -1
 	for i := 0; i < len(dig); i++ {
 		for j := i + 1; j < len(dig); j++ {
 			if dig[i] == dig[j] {
 				t := nums[i] + nums[j]
-				if t > max {
-					max = t
+				if t > maxN {
+					maxN = t
 				}
 			}
 		}
 	}
-	return max
+	return maxN
 }
 
 func getMaxDigit(n int) int {

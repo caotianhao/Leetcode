@@ -21,14 +21,7 @@ func treeHeight(root *TreeNode110) int {
 	if root == nil {
 		return 0
 	}
-	return max110(treeHeight(root.Left), treeHeight(root.Right)) + 1
-}
-
-func max110(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
+	return max(treeHeight(root.Left), treeHeight(root.Right)) + 1
 }
 
 func abs110(a int) int {

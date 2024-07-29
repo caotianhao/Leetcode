@@ -12,14 +12,7 @@ func maxDepth104(root *TreeNode104) int {
 	if root == nil {
 		return 0
 	}
-	return max104(maxDepth104(root.Left), maxDepth104(root.Right)) + 1
-}
-
-func max104(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
+	return max(maxDepth104(root.Left), maxDepth104(root.Right)) + 1
 }
 
 func main() {

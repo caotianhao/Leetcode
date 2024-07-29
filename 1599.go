@@ -8,7 +8,7 @@ func minOperationsMaxProfit(customers []int, boardingCost, runningCost int) int 
 	for _, c := range customers {
 		operations++
 		customersCount += c
-		curCustomers := min1599(customersCount, 4)
+		curCustomers := min(customersCount, 4)
 		customersCount -= curCustomers
 		totalProfit += boardingCost*curCustomers - runningCost
 		if totalProfit > maxProfit1599 {
@@ -40,13 +40,6 @@ func minOperationsMaxProfit(customers []int, boardingCost, runningCost int) int 
 		}
 	}
 	return ans
-}
-
-func min1599(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
 }
 
 func main() {

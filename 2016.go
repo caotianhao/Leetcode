@@ -8,18 +8,11 @@ func maximumDifference(nums []int) int {
 		for j := i + 1; j < l; j++ {
 			tmp := nums[j] - nums[i]
 			if tmp > 0 {
-				ret = max2016(ret, tmp)
+				ret = max(ret, tmp)
 			}
 		}
 	}
 	return ret
-}
-
-func max2016(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

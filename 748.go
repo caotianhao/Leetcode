@@ -11,7 +11,7 @@ func shortestCompletingWord(licensePlate string, words []string) string {
 		licensePlate = strings.Replace(licensePlate, needDelete[i], "", -1)
 	}
 	licensePlate = strings.ToLower(licensePlate)
-	lpMap, trueInd, min := map[string]int{}, 0, 16
+	lpMap, trueInd, minN := map[string]int{}, 0, 16
 	for i := 0; i < len(licensePlate); i++ {
 		lpMap[string(licensePlate[i])]++
 	}
@@ -28,8 +28,8 @@ func shortestCompletingWord(licensePlate string, words []string) string {
 			}
 		}
 		if yes {
-			if len(words[i]) < min {
-				min = len(words[i])
+			if len(words[i]) < minN {
+				minN = len(words[i])
 				trueInd = i
 			}
 		}

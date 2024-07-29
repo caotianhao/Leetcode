@@ -6,37 +6,37 @@ import (
 )
 
 func maxProfit(prices []int) int {
-	min, max := prices[0], -1
+	minN, maxN := prices[0], -1
 	for _, v := range prices {
-		if v < min {
-			min = v
+		if v < minN {
+			minN = v
 			continue
 		}
-		if v-min > max {
-			max = v - min
+		if v-minN > maxN {
+			maxN = v - minN
 		}
 	}
-	return max
+	return maxN
 }
 
 func maxProfit1(prices []int) int {
 	n := len(prices)
 	dp := make([]int, n)
-	min := math.MaxInt64
-	max := 0
+	minN := math.MaxInt64
+	maxN := 0
 	for i, p := range prices {
-		if p < min {
-			min = p
+		if p < minN {
+			minN = p
 			continue
 		}
-		dp[i] = p - min
+		dp[i] = p - minN
 	}
 	for _, v := range dp {
-		if v > max {
-			max = v
+		if v > maxN {
+			maxN = v
 		}
 	}
-	return max
+	return maxN
 }
 
 func main() {

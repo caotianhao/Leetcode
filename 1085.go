@@ -3,16 +3,16 @@ package main
 import "fmt"
 
 func sumOfDigits(nums []int) int {
-	min := 101
+	minN := 101
 	for _, v := range nums {
-		if v < min {
-			min = v
+		if v < minN {
+			minN = v
 		}
 	}
 	res := 0
-	for min != 0 {
-		res += min % 10
-		min /= 10
+	for minN != 0 {
+		res += minN % 10
+		minN /= 10
 	}
 	return (res%2 + 1) % 2
 }

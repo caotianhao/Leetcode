@@ -6,15 +6,15 @@ import (
 )
 
 func maxDistance(colors []int) int {
-	l, max := len(colors), -1
+	l, maxN := len(colors), -1
 	for i := 0; i < l; i++ {
 		for j := i + 1; j < l; j++ {
-			if colors[i] != colors[j] && int(math.Abs(float64(i-j))) > max {
-				max = int(math.Abs(float64(i - j)))
+			if colors[i] != colors[j] && int(math.Abs(float64(i-j))) > maxN {
+				maxN = int(math.Abs(float64(i - j)))
 			}
 		}
 	}
-	return max
+	return maxN
 }
 
 func main() {

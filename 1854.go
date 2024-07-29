@@ -3,15 +3,15 @@ package main
 import "fmt"
 
 func maximumPopulation(logs [][]int) int {
-	mapPeople, l, max, maxYear := make([]int, 2055), len(logs), 0, 0
+	mapPeople, l, maxN, maxYear := make([]int, 2055), len(logs), 0, 0
 	for i := 0; i < l; i++ {
 		for j := logs[i][0]; j < logs[i][1]; j++ {
 			mapPeople[j]++
 		}
 	}
 	for i, v := range mapPeople {
-		if v > max {
-			max = v
+		if v > maxN {
+			maxN = v
 			maxYear = i
 		}
 	}

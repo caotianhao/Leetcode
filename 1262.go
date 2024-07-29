@@ -53,7 +53,7 @@ func maxSumDivThree(nums []int) int {
 			// 不选当前数，则为上一行的值
 			// 选了就是反向计算余数，加入进来
 			//ddp[(j+nums[i-1])%3] = max1262(dp[(j+nums[i-1])%3], dp[j]+nums[i-1])
-			ddp[j] = max1262(dp[j], dp[getMod(j-nums[i-1], 3)]+nums[i-1])
+			ddp[j] = max(dp[j], dp[getMod(j-nums[i-1], 3)]+nums[i-1])
 		}
 		dp = ddp
 
@@ -72,13 +72,6 @@ func getMod(a, b int) int {
 		r += b
 	}
 	return r
-}
-
-func max1262(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

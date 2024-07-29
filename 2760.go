@@ -4,7 +4,7 @@ import "fmt"
 
 func longestAlternatingSubarray(nums []int, threshold int) int {
 	// 暴力枚举所有连续子数组
-	max := 0
+	maxN := 0
 	l := len(nums)
 	for i := 0; i < l; i++ {
 		if nums[i]%2 != 0 {
@@ -23,17 +23,10 @@ func longestAlternatingSubarray(nums []int, threshold int) int {
 					break loop
 				}
 			}
-			max = max2760(max, j-i+1)
+			maxN = max(maxN, j-i+1)
 		}
 	}
-	return max
-}
-
-func max2760(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
+	return maxN
 }
 
 func main() {

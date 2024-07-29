@@ -6,18 +6,18 @@ import (
 
 func maximumTripletValue(nums []int) int64 {
 	n := len(nums)
-	max := int64(-0)
+	maxN := int64(-0)
 	for i := 0; i < n; i++ {
 		for j := i + 1; j < n; j++ {
 			for k := j + 1; k < n; k++ {
 				t := (nums[i] - nums[j]) * nums[k]
-				if int64(t) > max {
-					max = int64(t)
+				if int64(t) > maxN {
+					maxN = int64(t)
 				}
 			}
 		}
 	}
-	return max
+	return maxN
 }
 
 func main() {

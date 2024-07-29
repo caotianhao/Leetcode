@@ -10,17 +10,10 @@ func findColumnWidth(grid [][]int) []int {
 	res := make([]int, col)
 	for i := 0; i < col; i++ {
 		for j := 0; j < row; j++ {
-			res[i] = max2639(res[i], len(strconv.FormatInt(int64(grid[j][i]), 10)))
+			res[i] = max(res[i], len(strconv.FormatInt(int64(grid[j][i]), 10)))
 		}
 	}
 	return res
-}
-
-func max2639(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

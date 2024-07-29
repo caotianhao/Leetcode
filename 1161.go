@@ -13,7 +13,7 @@ type TreeNode1161 struct {
 
 func maxLevelSum(root *TreeNode1161) (r int) {
 	queue := []*TreeNode1161{root}
-	level, max := 1, math.MinInt64
+	level, maxN := 1, math.MinInt64
 	for len(queue) != 0 {
 		t, s := queue, 0
 		queue = nil
@@ -26,8 +26,8 @@ func maxLevelSum(root *TreeNode1161) (r int) {
 				queue = append(queue, node.Right)
 			}
 		}
-		if s > max {
-			max = s
+		if s > maxN {
+			maxN = s
 			r = level
 		}
 		level++

@@ -20,7 +20,7 @@ func Constructor281(v1, v2 []int) *ZigzagIterator {
 func (zi *ZigzagIterator) next() int {
 	l1, l2 := len(zi.a1), len(zi.a2)
 	var r int
-	if zi.cnt < min281(l1, l2)*2 {
+	if zi.cnt < min(l1, l2)*2 {
 		if zi.cnt%2 == 0 {
 			r = zi.a1[zi.cnt/2]
 		} else {
@@ -41,13 +41,6 @@ func (zi *ZigzagIterator) next() int {
 
 func (zi *ZigzagIterator) hasNext() bool {
 	return zi.cnt < zi.l
-}
-
-func min281(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
 }
 
 func main() {

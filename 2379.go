@@ -3,21 +3,21 @@ package main
 import "fmt"
 
 func minimumRecolors(blocks string, k int) int {
-	l, min := len(blocks), k
+	l, minN := len(blocks), k
 	for i := 0; i < l-k; i++ {
 		temp := howManyW2379(blocks[i : i+k])
-		if temp < min {
-			min = temp
+		if temp < minN {
+			minN = temp
 		}
-		if min == 0 {
+		if minN == 0 {
 			return 0
 		}
 	}
 	temp := howManyW2379(blocks[l-k:])
-	if temp < min {
-		min = temp
+	if temp < minN {
+		minN = temp
 	}
-	return min
+	return minN
 }
 
 func howManyW2379(s string) int {

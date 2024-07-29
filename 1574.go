@@ -16,19 +16,12 @@ func findLengthOfShortestSubarray(arr []int) int {
 		for j < n && arr[j] < arr[i] {
 			j++
 		}
-		res = min1574(res, j-i-1)
+		res = min(res, j-i-1)
 		if i+1 < n && arr[i] > arr[i+1] {
 			break
 		}
 	}
 	return res
-}
-
-func min1574(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
 }
 
 func main() {

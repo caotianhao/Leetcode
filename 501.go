@@ -10,7 +10,7 @@ type TreeNode501 struct {
 
 func findMode(root *TreeNode501) (res []int) {
 	// base当前数 count当前数的数量 max最大count也就是众数
-	base, count, max := 0, 0, 0
+	base, count, maxN := 0, 0, 0
 	// 统计众数的函数
 	var findArr func(x int)
 	// 中序遍历
@@ -23,10 +23,10 @@ func findMode(root *TreeNode501) (res []int) {
 		} else {
 			base, count = x, 1
 		}
-		if count == max {
+		if count == maxN {
 			res = append(res, x)
-		} else if count > max {
-			max = count
+		} else if count > maxN {
+			maxN = count
 			res = []int{base}
 		}
 	}

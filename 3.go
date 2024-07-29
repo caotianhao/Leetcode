@@ -43,7 +43,7 @@ func lengthOfLongestSubstring(s string) (res int) {
 		_, ok := hashMap[s[q]]
 		if !ok {
 			hashMap[s[q]] = struct{}{}
-			res = max3(res, len(hashMap))
+			res = max(res, len(hashMap))
 			q++
 		} else {
 			delete(hashMap, s[p])
@@ -51,13 +51,6 @@ func lengthOfLongestSubstring(s string) (res int) {
 		}
 	}
 	return
-}
-
-func max3(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

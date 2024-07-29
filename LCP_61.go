@@ -28,20 +28,13 @@ func temperatureTrend(temperatureA []int, temperatureB []int) int {
 	for i := 0; i < l-1; i++ {
 		for j := i; j < l-1; j++ {
 			if isTwoArraysEqual(resA[i:j+1], resB[i:j+1]) {
-				res = maxLCP61(res, j-i+1)
+				res = max(res, j-i+1)
 			} else {
 				break
 			}
 		}
 	}
 	return res
-}
-
-func maxLCP61(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func isTwoArraysEqual(a, b []int) bool {

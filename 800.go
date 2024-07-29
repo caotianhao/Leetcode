@@ -13,7 +13,7 @@ func similarRGB(color string) string {
 	aa, _ := strconv.ParseInt(color[1:3], 16, 64)
 	bb, _ := strconv.ParseInt(color[3:5], 16, 64)
 	cc, _ := strconv.ParseInt(color[5:], 16, 64)
-	min := 250000
+	minCC := 250000
 	a, b, c := int(aa), int(bb), int(cc)
 	ii, jj, kk := -1, -1, -1
 	for i := 0; i < 16; i++ {
@@ -21,8 +21,8 @@ func similarRGB(color string) string {
 			for k := 0; k < 16; k++ {
 				t := (a-hexArr[i])*(a-hexArr[i]) + (b-hexArr[j])*
 					(b-hexArr[j]) + (c-hexArr[k])*(c-hexArr[k])
-				if t < min {
-					min = t
+				if t < minCC {
+					minCC = t
 					ii, jj, kk = i, j, k
 				}
 			}

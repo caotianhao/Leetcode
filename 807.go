@@ -28,7 +28,7 @@ func maxIncreaseKeepingSkyline(grid [][]int) (ans int) {
 				retMatrix[i][j] = columnMax
 			}
 			if grid[i][j] != rowMax && grid[i][j] != columnMax {
-				retMatrix[i][j] = min807(columnMax, rowMax)
+				retMatrix[i][j] = min(columnMax, rowMax)
 			}
 		}
 	}
@@ -38,13 +38,6 @@ func maxIncreaseKeepingSkyline(grid [][]int) (ans int) {
 		}
 	}
 	return
-}
-
-func min807(i, j int) int {
-	if i < j {
-		return i
-	}
-	return j
 }
 
 func main() {

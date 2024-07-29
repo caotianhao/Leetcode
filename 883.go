@@ -14,7 +14,7 @@ func projectionArea(grid [][]int) int {
 	}
 	//xz：y 俯视，矩阵每一行的最大值之和
 	for i := 0; i < l; i++ {
-		xz += max883(grid[i])
+		xz += getMax883(grid[i])
 	}
 	//yz：x 俯视，矩阵每一列的最大值之和
 	for i := 0; i < l; i++ {
@@ -22,19 +22,19 @@ func projectionArea(grid [][]int) int {
 		for j := 0; j < l; j++ {
 			col = append(col, grid[j][i])
 		}
-		yz += max883(col)
+		yz += getMax883(col)
 	}
 	return xy + xz + yz
 }
 
-func max883(arr []int) int {
-	max := -1
+func getMax883(arr []int) int {
+	maxR := -1
 	for _, v := range arr {
-		if v > max {
-			max = v
+		if v > maxR {
+			maxR = v
 		}
 	}
-	return max
+	return maxR
 }
 
 func main() {

@@ -10,7 +10,7 @@ func totalFruit(fruits []int) int {
 	for q < len(fruits) {
 		fruitMap[fruits[q]]++
 		if len(fruitMap) <= 2 {
-			ret = max904(ret, q-p+1)
+			ret = max(ret, q-p+1)
 		}
 		if len(fruitMap) == 3 {
 			tmp := -1
@@ -27,18 +27,11 @@ func totalFruit(fruits []int) int {
 					break
 				}
 			}
-			ret = max904(ret, q-p+1)
+			ret = max(ret, q-p+1)
 		}
 		q++
 	}
 	return ret
-}
-
-func max904(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

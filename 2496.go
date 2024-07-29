@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 	"strconv"
 )
 
@@ -15,7 +16,8 @@ func maximumValue(strs []string) int {
 			sli = append(sli, int(tmp))
 		}
 	}
-	return max2496(sli)
+	sort.Ints(sli)
+	return sli[len(sli)-1]
 }
 
 func isChar2496(s string) bool {
@@ -25,16 +27,6 @@ func isChar2496(s string) bool {
 		}
 	}
 	return false
-}
-
-func max2496(a []int) int {
-	max := -1
-	for _, v := range a {
-		if v > max {
-			max = v
-		}
-	}
-	return max
 }
 
 func main() {

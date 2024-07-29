@@ -9,18 +9,18 @@ func binaryGap(n int) (dis int) {
 	if bits.OnesCount(uint(n)) == 1 {
 		return 0
 	}
-	slice868, max := make([]int, 0), 0
+	slice868, maxM := make([]int, 0), 0
 	for i, v := range dec2Bin868(n) {
 		if v == 1 {
 			slice868 = append(slice868, i)
 		}
 	}
 	for i := 0; i < len(slice868)-1; i++ {
-		if slice868[i+1]-slice868[i] > max {
-			max = slice868[i+1] - slice868[i]
+		if slice868[i+1]-slice868[i] > maxM {
+			maxM = slice868[i+1] - slice868[i]
 		}
 	}
-	return max
+	return maxM
 }
 
 func dec2Bin868(n int) (slice868 []int) {

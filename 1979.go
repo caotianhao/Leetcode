@@ -6,16 +6,16 @@ import (
 )
 
 func findGCD1(nums []int) int {
-	min, max := nums[0], nums[0]
+	minN, maxN := nums[0], nums[0]
 	for i := 1; i < len(nums); i++ {
-		if nums[i] < min {
-			min = nums[i]
+		if nums[i] < minN {
+			minN = nums[i]
 		}
-		if nums[i] > max {
-			max = nums[i]
+		if nums[i] > maxN {
+			maxN = nums[i]
 		}
 	}
-	return gcd1979(max, min)
+	return gcd1979(maxN, minN)
 }
 
 func gcd1979(i int, j int) int {

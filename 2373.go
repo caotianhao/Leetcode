@@ -19,13 +19,13 @@ func largestLocal(grid [][]int) [][]int {
 }
 
 func partMax2373(a ...int) int {
-	max := 0
+	maxN := 0
 	for _, v := range a {
-		if v > max {
-			max = v
+		if v > maxN {
+			maxN = v
 		}
 	}
-	return max
+	return maxN
 }
 
 func main() {

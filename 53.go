@@ -10,7 +10,7 @@ func maxSubArray(nums []int) int {
 	dp := make([]int, n)
 	dp[0] = nums[0]
 	for i := 1; i < n; i++ {
-		dp[i] = max53(dp[i-1]+nums[i], nums[i])
+		dp[i] = max(dp[i-1]+nums[i], nums[i])
 	}
 	for _, v := range dp {
 		if v > res {
@@ -18,13 +18,6 @@ func maxSubArray(nums []int) int {
 		}
 	}
 	return res
-}
-
-func max53(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

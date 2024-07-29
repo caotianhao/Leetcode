@@ -1,11 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func countGoodRectangles(rectangles [][]int) int {
 	l, minSlice := len(rectangles), make([]int, 0)
 	for i := 0; i < l; i++ {
-		minSlice = append(minSlice, min1725(rectangles[i]))
+		minSlice = append(minSlice, minOneSTF(rectangles[i]))
 	}
 	maxOfMin, cnt := 0, 0
 	for i := 0; i < l; i++ {
@@ -21,12 +24,9 @@ func countGoodRectangles(rectangles [][]int) int {
 	return cnt
 }
 
-func min1725(arr []int) int {
-	if arr[0] > arr[1] {
-		return arr[1]
-	} else {
-		return arr[0]
-	}
+func minOneSTF(a []int) int {
+	sort.Ints(a)
+	return a[0]
 }
 
 func main() {

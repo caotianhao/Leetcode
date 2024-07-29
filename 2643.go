@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func rowAndMaximumOnes(mat [][]int) []int {
-	max, index := -1, 0
+	maxN, index := -1, 0
 	for i, v := range mat {
 		cnt := 0
 		for _, val := range v {
@@ -11,11 +11,11 @@ func rowAndMaximumOnes(mat [][]int) []int {
 				cnt++
 			}
 		}
-		if cnt > max {
-			max, index = cnt, i
+		if cnt > maxN {
+			maxN, index = cnt, i
 		}
 	}
-	return []int{index, max}
+	return []int{index, maxN}
 }
 
 func main() {

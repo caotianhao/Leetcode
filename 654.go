@@ -11,9 +11,9 @@ type TreeNode654 struct {
 }
 
 func constructMaximumBinaryTree(nums []int) *TreeNode654 {
-	max, ind := findMaxAndIndex(nums)
+	maxB, ind := findMaxAndIndex(nums)
 	if ind != -1 {
-		root := &TreeNode654{max, nil, nil}
+		root := &TreeNode654{maxB, nil, nil}
 		root.Left = constructMaximumBinaryTree(nums[:ind])
 		root.Right = constructMaximumBinaryTree(nums[ind+1:])
 		return root
@@ -22,14 +22,14 @@ func constructMaximumBinaryTree(nums []int) *TreeNode654 {
 }
 
 func findMaxAndIndex(nums []int) (int, int) {
-	max, ind := -1, -1
+	maxI, ind := -1, -1
 	for i, v := range nums {
-		if v > max {
-			max = v
+		if v > maxI {
+			maxI = v
 			ind = i
 		}
 	}
-	return max, ind
+	return maxI, ind
 }
 
 func main() {

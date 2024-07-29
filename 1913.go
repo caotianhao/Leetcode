@@ -3,14 +3,14 @@ package main
 import "fmt"
 
 func maxProductDifference(nums []int) int {
-	min, max, minIndex, maxIndex, min2, max2 := nums[0], nums[0], 0, 0, 10001, 0
+	minN, maxN, minIndex, maxIndex, min2, max2 := nums[0], nums[0], 0, 0, 10001, 0
 	for i := 0; i < len(nums); i++ {
-		if nums[i] > max {
-			max = nums[i]
+		if nums[i] > maxN {
+			maxN = nums[i]
 			maxIndex = i
 		}
-		if nums[i] < min {
-			min = nums[i]
+		if nums[i] < minN {
+			minN = nums[i]
 			minIndex = i
 		}
 	}
@@ -24,7 +24,7 @@ func maxProductDifference(nums []int) int {
 			}
 		}
 	}
-	return max*max2 - min*min2
+	return maxN*max2 - minN*min2
 }
 
 func main() {

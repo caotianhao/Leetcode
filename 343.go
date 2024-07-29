@@ -12,17 +12,10 @@ func integerBreak(n int) int {
 	for i := 3; i <= n; i++ {
 		//j 从 1 开始，因为 0 乘起来就变成 0
 		for j := 1; j < i; j++ {
-			dp[i] = max343(dp[i], max343(j*(i-j), j*dp[i-j]))
+			dp[i] = max(dp[i], max(j*(i-j), j*dp[i-j]))
 		}
 	}
 	return dp[n]
-}
-
-func max343(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

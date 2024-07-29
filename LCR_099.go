@@ -12,18 +12,11 @@ func minPathSum2099(grid [][]int) int {
 			} else if i != 0 && j == 0 {
 				grid[i][j] += grid[i-1][0]
 			} else {
-				grid[i][j] += min2099(grid[i-1][j], grid[i][j-1])
+				grid[i][j] += min(grid[i-1][j], grid[i][j-1])
 			}
 		}
 	}
 	return grid[len(grid)-1][len(grid[0])-1]
-}
-
-func min2099(i, j int) int {
-	if i < j {
-		return i
-	}
-	return j
 }
 
 func main() {

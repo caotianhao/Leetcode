@@ -3,15 +3,15 @@ package main
 import "fmt"
 
 func findMatrix(nums []int) [][]int {
-	max, map2610 := 0, map[int]int{}
+	maxM, map2610 := 0, map[int]int{}
 	for _, v := range nums {
 		map2610[v]++
-		if map2610[v] > max {
-			max = map2610[v]
+		if map2610[v] > maxM {
+			maxM = map2610[v]
 		}
 	}
-	res := make([][]int, max)
-	for i := 0; i < max; i++ {
+	res := make([][]int, maxM)
+	for i := 0; i < maxM; i++ {
 		tmp := make([]int, 0)
 		for k := range map2610 {
 			if map2610[k] != 0 {

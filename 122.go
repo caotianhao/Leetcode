@@ -13,25 +13,18 @@ func maxProfit122(prices []int) int {
 	dp[0][1] = -prices[0]
 	for i := 1; i < n; i++ {
 		// 手里没有股票，可能是卖出去了，也可能是没操作
-		dp[i][0] = max122(dp[i-1][1]+prices[i], dp[i-1][0])
+		dp[i][0] = max(dp[i-1][1]+prices[i], dp[i-1][0])
 		// 手里有股票，可能是今天买的，也可能是没操作
-		dp[i][1] = max122(dp[i-1][0]-prices[i], dp[i-1][1])
+		dp[i][1] = max(dp[i-1][0]-prices[i], dp[i-1][1])
 	}
 	return dp[n-1][0]
 }
 
 func maxProfit12201(prices []int) (ans int) {
 	for i := 1; i < len(prices); i++ {
-		ans += max122(0, prices[i]-prices[i-1])
+		ans += max(0, prices[i]-prices[i-1])
 	}
 	return
-}
-
-func max122(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

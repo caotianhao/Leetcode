@@ -13,15 +13,15 @@ func bestHand(ranks []int, suits []byte) string {
 	if len(suitsMap) == 1 {
 		return "Flush"
 	}
-	max := 0
+	maxN := 0
 	for _, v := range ranksMap {
-		if v > max {
-			max = v
+		if v > maxN {
+			maxN = v
 		}
 	}
-	if max >= 3 {
+	if maxN >= 3 {
 		return "Three of a Kind"
-	} else if max == 2 {
+	} else if maxN == 2 {
 		return "Pair"
 	} else {
 		return "High Card"

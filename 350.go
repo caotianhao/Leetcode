@@ -12,19 +12,12 @@ func intersect(nums1 []int, nums2 []int) (res []int) {
 	}
 	for i, v := range m1 {
 		if v2, ok := m2[i]; ok {
-			for j := 0; j < min350(v, v2); j++ {
+			for j := 0; j < min(v, v2); j++ {
 				res = append(res, i)
 			}
 		}
 	}
 	return
-}
-
-func min350(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
 }
 
 func main() {

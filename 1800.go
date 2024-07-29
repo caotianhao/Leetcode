@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func maxAscendingSum(nums []int) int {
-	l, max, sliceSum, sliceDivide := len(nums), 0, make([]int, 0), make([]int, 0)
+	l, maxN, sliceSum, sliceDivide := len(nums), 0, make([]int, 0), make([]int, 0)
 	if l == 1 {
 		return nums[0]
 	}
@@ -25,11 +25,11 @@ func maxAscendingSum(nums []int) int {
 	sliceSum = append(sliceSum, arrSum1800(nums[:sliceDivide[0]+1]))
 	sliceSum = append(sliceSum, arrSum1800(nums[sliceDivide[len(sliceDivide)-1]+1:]))
 	for i := 0; i < len(sliceSum); i++ {
-		if sliceSum[i] > max {
-			max = sliceSum[i]
+		if sliceSum[i] > maxN {
+			maxN = sliceSum[i]
 		}
 	}
-	return max
+	return maxN
 }
 
 func arrSum1800(arr []int) int {

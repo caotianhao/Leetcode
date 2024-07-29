@@ -9,20 +9,13 @@ func minNumberOfHours(initialEnergy int, initialExperience int, energy []int, ex
 	for _, v := range energy {
 		totalEn += v
 	}
-	trainEn = max2383(0, totalEn-initialEnergy+1)
+	trainEn = max(0, totalEn-initialEnergy+1)
 	for _, v := range experience {
-		needEx = max2383(needEx, v-tmp)
+		needEx = max(needEx, v-tmp)
 		tmp += v
 	}
-	trainEx = max2383(0, needEx-initialExperience)
+	trainEx = max(0, needEx-initialExperience)
 	return trainEn + trainEx
-}
-
-func max2383(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

@@ -6,7 +6,7 @@ import (
 )
 
 func minimumDifference(nums []int, k int) int {
-	l, min := len(nums), 100001
+	l, minN := len(nums), 100001
 	sort.Ints(nums)
 	if l == k {
 		return nums[l-1] - nums[0]
@@ -15,11 +15,11 @@ func minimumDifference(nums []int, k int) int {
 		return 0
 	}
 	for i := 0; i <= l-k; i++ {
-		if nums[i+k-1]-nums[i] < min {
-			min = nums[i+k-1] - nums[i]
+		if nums[i+k-1]-nums[i] < minN {
+			minN = nums[i+k-1] - nums[i]
 		}
 	}
-	return min
+	return minN
 }
 
 func main() {

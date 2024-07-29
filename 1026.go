@@ -10,31 +10,17 @@ type TreeNode1026 struct {
 
 func maxAncestorDiff(root *TreeNode1026) int {
 	var dfs func(node *TreeNode1026, min, max int) int
-	dfs = func(node *TreeNode1026, min, max int) int {
+	dfs = func(node *TreeNode1026, minN, maxN int) int {
 		if node == nil {
 			return 0
 		}
-		diff := max1026(abs1026(node.Val-min), abs1026(node.Val-max))
-		min, max = min1026(min, node.Val), max1026(max, node.Val)
-		diff = max1026(diff, dfs(node.Left, min, max))
-		diff = max1026(diff, dfs(node.Right, min, max))
+		diff := max(abs1026(node.Val-minN), abs1026(node.Val-maxN))
+		minN, maxN = min(minN, node.Val), max(maxN, node.Val)
+		diff = max(diff, dfs(node.Left, minN, maxN))
+		diff = max(diff, dfs(node.Right, minN, maxN))
 		return diff
 	}
 	return dfs(root, root.Val, root.Val)
-}
-
-func max1026(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-
-func min1026(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
 }
 
 func abs1026(a int) int {

@@ -6,17 +6,17 @@ func findNonMinOrMax(nums []int) int {
 	if len(nums) < 3 {
 		return -1
 	} else {
-		min, max := 101, 0
+		minN, maxN := 101, 0
 		for _, v := range nums {
-			if v > max {
-				max = v
+			if v > maxN {
+				maxN = v
 			}
-			if v < min {
-				min = v
+			if v < minN {
+				minN = v
 			}
 		}
 		for _, v := range nums {
-			if v != min && v != max {
+			if v != minN && v != maxN {
 				return v
 			}
 		}

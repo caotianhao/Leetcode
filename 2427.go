@@ -3,11 +3,11 @@ package main
 import "fmt"
 
 func commonFactors(a int, b int) int {
-	min, cnt := a, 0
+	minF, cnt := a, 0
 	if b < a {
-		min = b
+		minF = b
 	}
-	for i := 1; i <= min; i++ {
+	for i := 1; i <= minF; i++ {
 		if a%i == 0 && b%i == 0 {
 			cnt++
 		}

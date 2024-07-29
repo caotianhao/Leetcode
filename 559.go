@@ -11,14 +11,14 @@ func maxDepth559(root *Node559) int {
 	if root == nil {
 		return 0
 	}
-	max := 0
+	maxD := 0
 	for _, v := range root.Children {
 		tmp := maxDepth559(v)
-		if tmp > max {
-			max = tmp
+		if tmp > maxD {
+			maxD = tmp
 		}
 	}
-	return max + 1
+	return maxD + 1
 }
 
 func main() {

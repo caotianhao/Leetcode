@@ -22,17 +22,10 @@ func insert(intervals [][]int, newInterval []int) (res [][]int) {
 		if v[0] > res[len(res)-1][1] {
 			res = append(res, v)
 		} else {
-			res[len(res)-1][1] = max57(res[len(res)-1][1], v[1])
+			res[len(res)-1][1] = max(res[len(res)-1][1], v[1])
 		}
 	}
 	return
-}
-
-func max57(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

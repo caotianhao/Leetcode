@@ -22,7 +22,7 @@ func longestCommonSubsequence(s1, s2 string) int {
 				dp[i+1][j+1] = dp[i][j] + 1
 			} else {
 				// 如果不等，那就按题意取值，本题为最大，即取最大
-				dp[i+1][j+1] = max1143(dp[i+1][j], dp[i][j+1])
+				dp[i+1][j+1] = max(dp[i+1][j], dp[i][j+1])
 			}
 		}
 	}
@@ -41,19 +41,12 @@ func longestCommonSubsequence1(text1, text2 string) int {
 			if byte1 == byte2 {
 				dp[i+1][j+1] = dp[i][j] + 1
 			} else {
-				dp[i+1][j+1] = max1143(dp[i+1][j], dp[i][j+1])
+				dp[i+1][j+1] = max(dp[i+1][j], dp[i][j+1])
 			}
 		}
 	}
 	//fmt.Println(dp)
 	return dp[n1][n2]
-}
-
-func max1143(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

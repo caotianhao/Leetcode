@@ -12,7 +12,7 @@ type TreeNode783 struct {
 }
 
 func minDiffInBST(root *TreeNode783) int {
-	arr, min := make([]int, 0), 999999
+	arr, minK := make([]int, 0), 999999
 	var po = func(node *TreeNode783) {}
 	po = func(node *TreeNode783) {
 		if node != nil {
@@ -25,14 +25,14 @@ func minDiffInBST(root *TreeNode783) int {
 	sort.Ints(arr)
 	for i := 0; i < len(arr)-1; i++ {
 		tmp := arr[i+1] - arr[i]
-		if tmp < min {
-			min = tmp
-			if min == 1 {
+		if tmp < minK {
+			minK = tmp
+			if minK == 1 {
 				return 1
 			}
 		}
 	}
-	return min
+	return minK
 }
 
 func main() {

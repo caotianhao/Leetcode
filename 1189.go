@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
 func maxNumberOfBalloons(text string) int {
@@ -10,12 +9,7 @@ func maxNumberOfBalloons(text string) int {
 	for _, v := range text {
 		map1189[string(v)]++
 	}
-	return min1189(map1189["b"], map1189["a"], map1189["l"]/2, map1189["o"]/2, map1189["n"])
-}
-
-func min1189(arr ...int) int {
-	sort.Ints(arr)
-	return arr[0]
+	return min(map1189["b"], map1189["a"], map1189["l"]/2, map1189["o"]/2, map1189["n"])
 }
 
 func main() {

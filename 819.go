@@ -15,21 +15,21 @@ func mostCommonWord(paragraph string, banned []string) string {
 	paragraph = strings.Replace(paragraph, ".", " ", -1)
 	paragraph = strings.Replace(paragraph, ";", " ", -1)
 	p := strings.Fields(paragraph)
-	bannedMap, canMap, max := map[string]struct{}{}, map[string]int{}, 0
+	bannedMap, canMap, maxF := map[string]struct{}{}, map[string]int{}, 0
 	for _, v := range banned {
 		bannedMap[v] = struct{}{}
 	}
 	for _, v := range p {
 		if _, ok := bannedMap[v]; !ok {
 			canMap[v]++
-			if canMap[v] > max {
-				max = canMap[v]
+			if canMap[v] > maxF {
+				maxF = canMap[v]
 			}
 		}
 	}
 	fmt.Println(canMap)
 	for i, v := range canMap {
-		if v == max {
+		if v == maxF {
 			return i
 		}
 	}

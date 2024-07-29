@@ -19,7 +19,7 @@ func minimumTotal(triangle [][]int) int {
 		dp[i][0] = dp[i-1][0] + triangle[i][0]
 		dp[i][i] = dp[i-1][i-1] + triangle[i][i]
 		for j := 1; j < i; j++ {
-			dp[i][j] = min120(dp[i-1][j], dp[i-1][j-1]) + triangle[i][j]
+			dp[i][j] = min(dp[i-1][j], dp[i-1][j-1]) + triangle[i][j]
 		}
 	}
 	for i := 0; i < l; i++ {
@@ -41,23 +41,16 @@ func minimumTotal1(triangle [][]int) int {
 		dp[i][0] = dp[i-1][0] + triangle[i][0]
 		dp[i][i] = dp[i-1][i-1] + triangle[i][i]
 		for j := 1; j < i; j++ {
-			dp[i][j] = triangle[i][j] + min120(dp[i-1][j], dp[i-1][j-1])
+			dp[i][j] = triangle[i][j] + min(dp[i-1][j], dp[i-1][j-1])
 		}
 	}
-	min := math.MaxInt64
+	minNow := math.MaxInt64
 	for _, v := range dp[n-1] {
-		if v < min {
-			min = v
+		if v < minNow {
+			minNow = v
 		}
 	}
-	return min
-}
-
-func min120(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
+	return minNow
 }
 
 func main() {

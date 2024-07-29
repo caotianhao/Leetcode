@@ -5,15 +5,15 @@ import "fmt"
 func supplyWagon(supplies []int) []int {
 	br := len(supplies) - len(supplies)/2
 	for recycle := 0; recycle < br; recycle++ {
-		min := 3000
+		minW := 3000
 		for i := 0; i < len(supplies)-1; i++ {
-			if supplies[i]+supplies[i+1] < min {
-				min = supplies[i] + supplies[i+1]
+			if supplies[i]+supplies[i+1] < minW {
+				minW = supplies[i] + supplies[i+1]
 			}
 		}
 		ind := -1
 		for i := 0; i < len(supplies)-1; i++ {
-			if supplies[i]+supplies[i+1] == min {
+			if supplies[i]+supplies[i+1] == minW {
 				ind = i
 				break
 			}

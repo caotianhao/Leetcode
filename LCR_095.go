@@ -13,18 +13,11 @@ func longestCommonSubsequence95(text1, text2 string) int {
 			if b1 == b2 {
 				dp[i+1][j+1] = dp[i][j] + 1
 			} else {
-				dp[i+1][j+1] = max095(dp[i+1][j], dp[i][j+1])
+				dp[i+1][j+1] = max(dp[i+1][j], dp[i][j+1])
 			}
 		}
 	}
 	return dp[n1][n2]
-}
-
-func max095(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

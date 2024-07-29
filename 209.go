@@ -7,7 +7,7 @@ func minSubArrayLen(target int, nums []int) int {
 	for q < len(nums) {
 		sum += nums[q]
 		for sum >= target {
-			ret = min209(q-p+1, ret)
+			ret = min(q-p+1, ret)
 			sum -= nums[p]
 			p++
 		}
@@ -17,13 +17,6 @@ func minSubArrayLen(target int, nums []int) int {
 		return 0
 	}
 	return ret
-}
-
-func min209(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
 }
 
 func main() {

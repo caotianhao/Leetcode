@@ -12,7 +12,7 @@ type TreeNode530 struct {
 }
 
 func getMinimumDifference(root *TreeNode530) int {
-	arr, min := make([]int, 0), 999999
+	arr, minN := make([]int, 0), 999999
 	var po = func(node *TreeNode530) {}
 	po = func(node *TreeNode530) {
 		if node != nil {
@@ -25,14 +25,14 @@ func getMinimumDifference(root *TreeNode530) int {
 	sort.Ints(arr)
 	for i := 0; i < len(arr)-1; i++ {
 		tmp := arr[i+1] - arr[i]
-		if tmp < min {
-			min = tmp
-			if min == 1 {
+		if tmp < minN {
+			minN = tmp
+			if minN == 1 {
 				return 1
 			}
 		}
 	}
-	return min
+	return minN
 }
 
 func main() {

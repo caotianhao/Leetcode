@@ -11,18 +11,11 @@ type TreeNode655 struct {
 	Right *TreeNode655
 }
 
-func max655(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-
 func getHeight655(root *TreeNode655) int {
 	if root == nil {
 		return 0
 	}
-	return 1 + max655(getHeight655(root.Left), getHeight655(root.Right))
+	return 1 + max(getHeight655(root.Left), getHeight655(root.Right))
 }
 
 func printTree(root *TreeNode655) [][]string {

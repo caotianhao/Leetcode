@@ -6,14 +6,14 @@ import (
 )
 
 func maxScore(s string) int {
-	max := -1
+	maxN := -1
 	for i := 1; i < len(s); i++ {
 		t := strings.Count(s[:i], "0") + strings.Count(s[i:], "1")
-		if t > max {
-			max = t
+		if t > maxN {
+			maxN = t
 		}
 	}
-	return max
+	return maxN
 }
 
 func main() {

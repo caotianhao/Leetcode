@@ -13,17 +13,10 @@ func rob(nums []int) int {
 		// 那么就是最后一间房的钱加上之前除了倒数第二间的值
 		// 如果不打劫最后一间房，那么就是倒数第二间的值
 		// 显然该取最大值
-		dp[i] = max198(dp[i-1], nums[i-1]+dp[i-2])
+		dp[i] = max(dp[i-1], nums[i-1]+dp[i-2])
 	}
 	// dp 的长度为 l+1，所以返回 dp[l]
 	return dp[l]
-}
-
-func max198(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

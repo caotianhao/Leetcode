@@ -47,18 +47,18 @@ func thirdMax2(nums []int) int {
 
 // 方法 3：三个变量分别维护最大数，第二最大数，第三最大数
 func thirdMax3(nums []int) int {
-	max, max2, max3 := math.MinInt64, math.MinInt64, math.MinInt64
+	max1, max2, max3 := math.MinInt64, math.MinInt64, math.MinInt64
 	for i := 0; i < len(nums); i++ {
-		if nums[i] > max {
-			max, max2, max3 = nums[i], max, max2
-		} else if nums[i] < max && nums[i] > max2 {
+		if nums[i] > max1 {
+			max1, max2, max3 = nums[i], max1, max2
+		} else if nums[i] < max1 && nums[i] > max2 {
 			max2, max3 = nums[i], max2
 		} else if nums[i] < max2 && nums[i] > max3 {
 			max3 = nums[i]
 		}
 	}
 	if max3 == math.MinInt64 {
-		return max
+		return max1
 	}
 	return max3
 }

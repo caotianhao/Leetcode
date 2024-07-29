@@ -5,7 +5,7 @@ import (
 	"math"
 )
 
-func maxScoreWords(words []string, letters []byte, score []int) (max int) {
+func maxScoreWords(words []string, letters []byte, score []int) (maxN int) {
 	allLetter, l := [26]byte{}, len(words)
 	for _, v := range letters {
 		allLetter[v-97]++
@@ -29,7 +29,7 @@ func maxScoreWords(words []string, letters []byte, score []int) (max int) {
 			}
 		}
 		if judge1255(s, allLetter) {
-			max = max1255(max, num)
+			maxN = max(maxN, num)
 		}
 	}
 	return
@@ -46,13 +46,6 @@ func judge1255(str string, m [26]byte) bool {
 		}
 	}
 	return true
-}
-
-func max1255(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

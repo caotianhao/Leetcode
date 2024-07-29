@@ -11,16 +11,16 @@ func maxAbsoluteSum(nums []int) int {
 	for i := 0; i < n; i++ {
 		partSum[i+1] += partSum[i] + nums[i]
 	}
-	max, min := math.MinInt64, math.MaxInt64
+	maxN, minN := math.MinInt64, math.MaxInt64
 	for _, v := range partSum {
-		if v > max {
-			max = v
+		if v > maxN {
+			maxN = v
 		}
-		if v < min {
-			min = v
+		if v < minN {
+			minN = v
 		}
 	}
-	return max - min
+	return maxN - minN
 }
 
 func main() {

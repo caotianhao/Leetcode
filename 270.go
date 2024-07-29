@@ -13,15 +13,15 @@ type TreeNode270 struct {
 }
 
 func closestValue(root *TreeNode270, target float64) int {
-	min := math.MaxFloat64
+	minN := math.MaxFloat64
 	res := make([]int, 0)
 	var dfs func(node *TreeNode270)
 	var dfs1 func(node *TreeNode270)
 	dfs = func(node *TreeNode270) {
 		if node != nil {
 			dfs(node.Left)
-			if math.Abs(float64(node.Val)-target) < min {
-				min = math.Abs(float64(node.Val) - target)
+			if math.Abs(float64(node.Val)-target) < minN {
+				minN = math.Abs(float64(node.Val) - target)
 			}
 			dfs(node.Right)
 		}
@@ -29,7 +29,7 @@ func closestValue(root *TreeNode270, target float64) int {
 	dfs1 = func(node *TreeNode270) {
 		if node != nil {
 			dfs1(node.Left)
-			if math.Abs(float64(node.Val)-target) == min {
+			if math.Abs(float64(node.Val)-target) == minN {
 				res = append(res, node.Val)
 			}
 			dfs1(node.Right)

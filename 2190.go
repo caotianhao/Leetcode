@@ -9,14 +9,14 @@ func mostFrequent(nums []int, key int) int {
 			m[nums[i+1]]++
 		}
 	}
-	max := -1
+	maxN := -1
 	for _, v := range m {
-		if v > max {
-			max = v
+		if v > maxN {
+			maxN = v
 		}
 	}
 	for i, v := range m {
-		if v == max {
+		if v == maxN {
 			return i
 		}
 	}

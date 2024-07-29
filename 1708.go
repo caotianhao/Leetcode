@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 func largestSubarray(nums []int, k int) []int {
-	ind, max := -1, -1
+	ind, maxB := -1, -1
 	for i := 0; i <= len(nums)-k; i++ {
-		if nums[i] > max {
-			max = nums[i]
+		if nums[i] > maxB {
+			maxB = nums[i]
 			ind = i
 		}
 	}

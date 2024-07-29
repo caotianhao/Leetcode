@@ -22,18 +22,11 @@ func maximalNetworkRank(n int, roads [][]int) (ans int) {
 	for i := 0; i < n; i++ {
 		for j := i + 1; j < n; j++ {
 			dis := degree[i] + degree[j] - connect[i][j]
-			ans = max1615(dis, ans)
+			ans = max(dis, ans)
 		}
 	}
 	return
 	//图入门吧算是，把邻接矩阵这些都用上了
-}
-
-func max1615(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

@@ -12,14 +12,14 @@ type TreeNode988 struct {
 
 func smallestFromLeaf(root *TreeNode988) string {
 	var dfs func(*TreeNode988, string)
-	min := "{"
+	minF := "{"
 	dfs = func(node *TreeNode988, s string) {
 		if node != nil {
 			s += string(byte(node.Val + 97))
 			if node.Left == nil && node.Right == nil {
 				t := reverse988(s)
-				if t < min {
-					min = t
+				if t < minF {
+					minF = t
 				}
 				return
 			} else {
@@ -29,7 +29,7 @@ func smallestFromLeaf(root *TreeNode988) string {
 		}
 	}
 	dfs(root, "")
-	return min
+	return minF
 }
 
 func reverse988(s string) string {

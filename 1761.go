@@ -8,7 +8,7 @@ import (
 func minTrioDegree(n int, edges [][]int) int {
 	matrix := make([][]int, n)
 	degree := make([]int, n)
-	min := math.MaxInt64
+	minN := math.MaxInt64
 	for i := range matrix {
 		matrix[i] = make([]int, n)
 	}
@@ -25,8 +25,8 @@ func minTrioDegree(n int, edges [][]int) int {
 				if matrix[i][j] == 1 && matrix[j][k] == 1 && matrix[k][i] == 1 {
 					flag = false
 					t := degree[i] + degree[j] + degree[k] - 6
-					if t < min {
-						min = t
+					if t < minN {
+						minN = t
 					}
 				}
 			}
@@ -35,7 +35,7 @@ func minTrioDegree(n int, edges [][]int) int {
 	if flag {
 		return -1
 	}
-	return min
+	return minN
 }
 
 func main() {

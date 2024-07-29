@@ -4,14 +4,14 @@ import "fmt"
 
 func isConsecutive(nums []int) bool {
 	m := map[int]struct{}{}
-	min, l := 100001, len(nums)
+	minN, l := 100001, len(nums)
 	for _, v := range nums {
-		if v < min {
-			min = v
+		if v < minN {
+			minN = v
 		}
 		m[v] = struct{}{}
 	}
-	for i := min; i <= min+l-1; i++ {
+	for i := minN; i <= minN+l-1; i++ {
 		if _, ok := m[i]; !ok {
 			return false
 		}

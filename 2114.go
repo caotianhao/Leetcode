@@ -3,13 +3,13 @@ package main
 import "fmt"
 
 func mostWordsFound(sentences []string) int {
-	max := 0
+	maxWF := 0
 	for i := 0; i < len(sentences); i++ {
-		if howManyWords(sentences[i]) > max {
-			max = howManyWords(sentences[i])
+		if howManyWords(sentences[i]) > maxWF {
+			maxWF = howManyWords(sentences[i])
 		}
 	}
-	return max
+	return maxWF
 }
 
 func howManyWords(s string) int {

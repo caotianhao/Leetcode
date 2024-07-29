@@ -28,16 +28,9 @@ func (cs *CustomStack) Pop() int {
 }
 
 func (cs *CustomStack) Increment(k int, val int) {
-	for i := 0; i < min1381(k, len(cs.arr)); i++ {
+	for i := 0; i < min(k, len(cs.arr)); i++ {
 		cs.arr[i] += val
 	}
-}
-
-func min1381(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
 }
 
 func main() {

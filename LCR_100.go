@@ -19,7 +19,7 @@ func minimumTotal2100(triangle [][]int) int {
 		dp[i][0] = dp[i-1][0] + triangle[i][0]
 		dp[i][i] = dp[i-1][i-1] + triangle[i][i]
 		for j := 1; j < i; j++ {
-			dp[i][j] = min2100(dp[i-1][j], dp[i-1][j-1]) + triangle[i][j]
+			dp[i][j] = min(dp[i-1][j], dp[i-1][j-1]) + triangle[i][j]
 		}
 	}
 	for i := 0; i < l; i++ {
@@ -28,13 +28,6 @@ func minimumTotal2100(triangle [][]int) int {
 		}
 	}
 	return res
-}
-
-func min2100(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
 }
 
 func main() {

@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func maxDepth(s string) int {
-	l, stack, max := len(s), 0, -1
+	l, stack, maxN := len(s), 0, -1
 	if l == 0 || l == 1 {
 		return 0
 	}
@@ -11,14 +11,14 @@ func maxDepth(s string) int {
 		if v == '(' {
 			stack++
 		}
-		if stack > max {
-			max = stack
+		if stack > maxN {
+			maxN = stack
 		}
 		if v == ')' {
 			stack--
 		}
 	}
-	return max - stack
+	return maxN - stack
 }
 
 func main() {

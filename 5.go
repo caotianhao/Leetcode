@@ -4,16 +4,16 @@ import "fmt"
 
 func longestPalindrome(s string) string {
 	l, start, end := len(s), -1, -1
-	max := -1
+	maxN := -1
 	for i := 0; i < l; i++ {
 		left1, right1 := expandFromCenter(i, i, &s)
 		left2, right2 := expandFromCenter(i, i+1, &s)
-		if right1-left1+1 > max {
-			max = right1 - left1 + 1
+		if right1-left1+1 > maxN {
+			maxN = right1 - left1 + 1
 			start, end = left1, right1
 		}
-		if right2-left2+1 > max {
-			max = right2 - left2 + 1
+		if right2-left2+1 > maxN {
+			maxN = right2 - left2 + 1
 			start, end = left2, right2
 		}
 	}

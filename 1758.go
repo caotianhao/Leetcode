@@ -21,14 +21,7 @@ func minOperations1758(s string) int {
 			n++
 		}
 	}
-	return min1758(m, n)
-}
-
-func min1758(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
+	return min(m, n)
 }
 
 func main() {

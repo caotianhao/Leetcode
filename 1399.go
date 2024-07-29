@@ -3,17 +3,17 @@ package main
 import "fmt"
 
 func countLargestGroup(n int) (cnt int) {
-	map1399, max := map[int][]int{}, -1
+	map1399, maxN := map[int][]int{}, -1
 	for i := 1; i <= n; i++ {
 		map1399[anySum1399(i)] = append(map1399[anySum1399(i)], i)
 	}
 	for _, v := range map1399 {
-		if len(v) > max {
-			max = len(v)
+		if len(v) > maxN {
+			maxN = len(v)
 		}
 	}
 	for _, v := range map1399 {
-		if len(v) == max {
+		if len(v) == maxN {
 			cnt++
 		}
 	}

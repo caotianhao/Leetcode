@@ -11,14 +11,7 @@ func maximumCount(nums []int) int {
 			pos++
 		}
 	}
-	return max2529(pos, neg)
-}
-
-func max2529(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
+	return max(pos, neg)
 }
 
 func main() {

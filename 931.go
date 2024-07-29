@@ -37,10 +37,10 @@ import (
 func minFallingPathSum(g [][]int) int {
 	n, r := len(g), math.MaxInt64
 	for i := 1; i < n; i++ {
-		g[i][0] = min931(g[i-1][0], g[i-1][1]) + g[i][0]
-		g[i][n-1] = min931(g[i-1][n-1], g[i-1][n-2]) + g[i][n-1]
+		g[i][0] = min(g[i-1][0], g[i-1][1]) + g[i][0]
+		g[i][n-1] = min(g[i-1][n-1], g[i-1][n-2]) + g[i][n-1]
 		for j := 1; j < n-1; j++ {
-			g[i][j] = min931(min931(g[i-1][j], g[i-1][j-1]), g[i-1][j+1]) + g[i][j]
+			g[i][j] = min(min(g[i-1][j], g[i-1][j-1]), g[i-1][j+1]) + g[i][j]
 		}
 	}
 	for _, v := range g[n-1] {
@@ -49,13 +49,6 @@ func minFallingPathSum(g [][]int) int {
 		}
 	}
 	return r
-}
-
-func min931(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
 }
 
 func main() {

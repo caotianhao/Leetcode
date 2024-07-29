@@ -4,14 +4,14 @@ import "fmt"
 
 func kidsWithCandies(candies []int, extraCandies int) []bool {
 	slice1431, l := make([]bool, 0), len(candies)
-	max := 0
+	maxN := 0
 	for i := 0; i < l; i++ {
-		if candies[i] > max {
-			max = candies[i]
+		if candies[i] > maxN {
+			maxN = candies[i]
 		}
 	}
 	for i := 0; i < l; i++ {
-		if candies[i]+extraCandies >= max {
+		if candies[i]+extraCandies >= maxN {
 			slice1431 = append(slice1431, true)
 		} else {
 			slice1431 = append(slice1431, false)

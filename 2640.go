@@ -4,17 +4,17 @@ import "fmt"
 
 func findPrefixScore(nums []int) []int64 {
 	l := len(nums)
-	max, sum := make([]int, l), make([]int, l)
-	max[0] = nums[0]
+	maxN, sum := make([]int, l), make([]int, l)
+	maxN[0] = nums[0]
 	for i := 1; i < l; i++ {
-		if nums[i] > max[i-1] {
-			max[i] = nums[i]
+		if nums[i] > maxN[i-1] {
+			maxN[i] = nums[i]
 		} else {
-			max[i] = max[i-1]
+			maxN[i] = maxN[i-1]
 		}
 	}
 	for i := 0; i < l; i++ {
-		sum[i] = max[i] + nums[i]
+		sum[i] = maxN[i] + nums[i]
 	}
 	res := make([]int64, l+1)
 	for i, v := range sum {

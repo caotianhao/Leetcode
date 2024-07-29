@@ -3,21 +3,21 @@ package main
 import "fmt"
 
 func findMaxConsecutiveOnes(nums []int) int {
-	cnt, max := 0, -1
+	cnt, maxN := 0, -1
 	for _, v := range nums {
 		if v == 1 {
 			cnt++
 		} else {
-			if cnt > max {
-				max = cnt
+			if cnt > maxN {
+				maxN = cnt
 			}
 			cnt = 0
 		}
 	}
-	if cnt > max {
-		max = cnt
+	if cnt > maxN {
+		maxN = cnt
 	}
-	return max
+	return maxN
 }
 
 func main() {

@@ -25,16 +25,9 @@ func minimumDeletions(s string) (ret int) {
 			leftB++
 		}
 		//时刻记录
-		ret = min1653(ret, rightA+leftB)
+		ret = min(ret, rightA+leftB)
 	}
 	return ret
-}
-
-func min1653(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
 }
 
 func main() {

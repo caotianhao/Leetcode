@@ -5,23 +5,23 @@ import (
 )
 
 func findMaxAverage(nums []int, k int) float64 {
-	max, sum := 0.0, 0
+	maxA, sum := 0.0, 0
 	for i := range nums {
 		if i == k-1 {
 			for a := 0; a < k; a++ {
 				sum += nums[a]
 			}
-			max = float64(sum)
+			maxA = float64(sum)
 		}
 		if i >= k {
 			sum -= nums[i-k]
 			sum += nums[i]
-			if float64(sum) > max {
-				max = float64(sum)
+			if float64(sum) > maxA {
+				maxA = float64(sum)
 			}
 		}
 	}
-	return max / float64(k)
+	return maxA / float64(k)
 }
 
 func main() {

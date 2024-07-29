@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func mostFrequentEven(nums []int) int {
-	hashMap, max, res := map[int]int{}, 0, 100001
+	hashMap, maxN, res := map[int]int{}, 0, 100001
 	for _, v := range nums {
 		if v%2 == 0 {
 			hashMap[v]++
@@ -13,23 +13,16 @@ func mostFrequentEven(nums []int) int {
 		return -1
 	}
 	for _, v := range hashMap {
-		if v > max {
-			max = v
+		if v > maxN {
+			maxN = v
 		}
 	}
 	for i, v := range hashMap {
-		if v == max {
-			res = min2404(res, i)
+		if v == maxN {
+			res = min(res, i)
 		}
 	}
 	return res
-}
-
-func min2404(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
 }
 
 func main() {

@@ -7,7 +7,7 @@ func maxLengthBetweenEqualCharacters(s string) (ans int) {
 	for i := 0; i < l; i++ {
 		for j := i + 1; j < l; j++ {
 			if s[i] == s[j] {
-				ans = max1624(ans, j-i-1)
+				ans = max(ans, j-i-1)
 				flag = false
 			}
 		}
@@ -16,13 +16,6 @@ func maxLengthBetweenEqualCharacters(s string) (ans int) {
 		return -1
 	}
 	return ans
-}
-
-func max1624(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

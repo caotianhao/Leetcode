@@ -10,8 +10,8 @@ func slowestKey(releaseTimes []int, keys string) byte {
 		part[i] = releaseTimes[i] - releaseTimes[i-1]
 	}
 	for i := 0; i < n; i++ {
-		timeKey[int(keys[i]-'a')] = max1629(part[i], timeKey[int(keys[i]-'a')])
-		maxTime = max1629(maxTime, timeKey[int(keys[i]-'a')])
+		timeKey[int(keys[i]-'a')] = max(part[i], timeKey[int(keys[i]-'a')])
+		maxTime = max(maxTime, timeKey[int(keys[i]-'a')])
 	}
 	for i := 25; i >= 0; i-- {
 		if timeKey[i] == maxTime {
@@ -19,13 +19,6 @@ func slowestKey(releaseTimes []int, keys string) byte {
 		}
 	}
 	return '?'
-}
-
-func max1629(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {
