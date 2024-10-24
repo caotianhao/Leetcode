@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/Arafatk/DataViz/trees/redblacktree"
 )
 

@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/Arafatk/DataViz/trees/redblacktree"
 	"math"
 	"sort"
+
+	"github.com/Arafatk/DataViz/trees/redblacktree"
 )
 
 // 给你一个非空数组，返回此数组中第三大的数。如果不存在，则返回数组中最大的数。
